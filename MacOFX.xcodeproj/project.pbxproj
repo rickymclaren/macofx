@@ -10,6 +10,8 @@
 		7948726F15FFF08500B43C9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7948726E15FFF08500B43C9C /* Foundation.framework */; };
 		7948727215FFF08500B43C9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7948727115FFF08500B43C9C /* main.m */; };
 		7948727615FFF08500B43C9C /* MacOFX.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7948727515FFF08500B43C9C /* MacOFX.1 */; };
+		796AE14E1602541B00CB7611 /* OFXParserDOM.m in Sources */ = {isa = PBXBuildFile; fileRef = 796AE14D1602541B00CB7611 /* OFXParserDOM.m */; };
+		796AE1511602586E00CB7611 /* OFXLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 796AE1501602586E00CB7611 /* OFXLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +33,11 @@
 		7948727115FFF08500B43C9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7948727415FFF08500B43C9C /* MacOFX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MacOFX-Prefix.pch"; sourceTree = "<group>"; };
 		7948727515FFF08500B43C9C /* MacOFX.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = MacOFX.1; sourceTree = "<group>"; };
+		796AE14A1602539400CB7611 /* OFXParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OFXParser.h; sourceTree = "<group>"; };
+		796AE14C1602541B00CB7611 /* OFXParserDOM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFXParserDOM.h; sourceTree = "<group>"; };
+		796AE14D1602541B00CB7611 /* OFXParserDOM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFXParserDOM.m; sourceTree = "<group>"; };
+		796AE14F1602586E00CB7611 /* OFXLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OFXLoader.h; sourceTree = "<group>"; };
+		796AE1501602586E00CB7611 /* OFXLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OFXLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +81,13 @@
 			isa = PBXGroup;
 			children = (
 				7948727115FFF08500B43C9C /* main.m */,
+				796AE14F1602586E00CB7611 /* OFXLoader.h */,
+				796AE1501602586E00CB7611 /* OFXLoader.m */,
 				7948727515FFF08500B43C9C /* MacOFX.1 */,
 				7948727315FFF08500B43C9C /* Supporting Files */,
+				796AE14A1602539400CB7611 /* OFXParser.h */,
+				796AE14C1602541B00CB7611 /* OFXParserDOM.h */,
+				796AE14D1602541B00CB7611 /* OFXParserDOM.m */,
 			);
 			path = MacOFX;
 			sourceTree = "<group>";
@@ -140,6 +152,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7948727215FFF08500B43C9C /* main.m in Sources */,
+				796AE14E1602541B00CB7611 /* OFXParserDOM.m in Sources */,
+				796AE1511602586E00CB7611 /* OFXLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +246,7 @@
 				7948727B15FFF08500B43C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
