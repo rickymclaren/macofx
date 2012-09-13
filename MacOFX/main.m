@@ -8,43 +8,48 @@
 
 #import <Foundation/Foundation.h>
 
+NSString* loadXML() {
+    NSFileManager* sharedFM = [NSFileManager defaultManager];
+    NSArray* possibleURLs = [sharedFM URLsForDirectory:NSDownloadsDirectory
+                                             inDomains:NSUserDomainMask];
+    NSURL* downloadDir = nil;
+    
+    if ([possibleURLs count] >= 1) {
+        // Use the first directory (if multiple are returned)
+        downloadDir = [possibleURLs objectAtIndex:0];
+    }
+    NSLog(@"%@", downloadDir);
+    
+    NSError *error = nil;
+    NSArray *files = [sharedFM contentsOfDirectoryAtURL:downloadDir
+                             includingPropertiesForKeys:nil
+                                                options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                  error:&error];
+    
+    
+    NSString *ofxFile = nil;
+    for (NSURL *url in files) {
+        NSString *filePath = [url relativePath];
+        if ([filePath hasSuffix:@".ofx"]) {
+            NSLog(@"%@", filePath );
+            ofxFile = filePath;
+        }
+        
+    }
+    
+    return ofxFile;
+}
+
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
         
+        NSError *error = nil;
         NSString *home = NSHomeDirectory();
         NSLog(@"%@", home);
         
-        NSFileManager* sharedFM = [NSFileManager defaultManager];
-        NSArray* possibleURLs = [sharedFM URLsForDirectory:NSDownloadsDirectory
-                                                 inDomains:NSUserDomainMask];
-        NSURL* downloadDir = nil;
-        
-        if ([possibleURLs count] >= 1) {
-            // Use the first directory (if multiple are returned)
-            downloadDir = [possibleURLs objectAtIndex:0];
-        }
-        NSLog(@"%@", downloadDir);
-        
-        NSError *error = nil;
-        NSArray *properties = [NSArray arrayWithObjects:NSURLLocalizedNameKey, NSURLAttributeModificationDateKey, nil];
-        NSArray *files = [sharedFM contentsOfDirectoryAtURL:downloadDir
-                                includingPropertiesForKeys:properties
-                                options:NSDirectoryEnumerationSkipsHiddenFiles
-                                error:&error];
-        
-
-        NSString *ofxFile = nil;
-        for (NSURL *url in files) {
-            NSString *filePath = [url relativePath];
-            if ([filePath hasSuffix:@".ofx"]) {
-                NSLog(@"%@", filePath );
-                ofxFile = filePath;
-            }
-            
-        }
-        
+        NSString *ofxFile = loadXML();
         error = nil;
         if (ofxFile) {
             NSString *contents = [NSString stringWithContentsOfFile:ofxFile encoding:NSUTF8StringEncoding error:&error];
