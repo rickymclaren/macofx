@@ -23,7 +23,10 @@
         
         for (NSXMLElement* node in transNodes) {
             NSXMLElement *name = [[node elementsForName:@"NAME"] objectAtIndex:0];
-            [result addObject:[name stringValue]];
+            NSXMLElement *date = [[node elementsForName:@"DTPOSTED"] objectAtIndex:0];
+            NSXMLElement *amount = [[node elementsForName:@"TRNAMT"] objectAtIndex:0];
+            NSXMLElement *type = [[node elementsForName:@"TRNTYPE"] objectAtIndex:0];
+            [result addObject:[name objectValue]];
         }
         
     }
