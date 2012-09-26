@@ -7,6 +7,7 @@
 //
 
 #import "OFXParserDOM.h"
+#import "Transaction.h"
 
 @implementation OFXParserDOM
 - (NSArray*) parsefromXMLString: (NSString *) xml {
@@ -22,11 +23,18 @@
         NSArray* transNodes = [doc nodesForXPath:@"OFX/BANKMSGSRSV1/STMTTRNRS/STMTRS/BANKTRANLIST/STMTTRN" error:&error];
         
         for (NSXMLElement* node in transNodes) {
+            Transaction* t = [[Transaction alloc] init];
             NSXMLElement *name = [[node elementsForName:@"NAME"] objectAtIndex:0];
             NSXMLElement *date = [[node elementsForName:@"DTPOSTED"] objectAtIndex:0];
             NSXMLElement *amount = [[node elementsForName:@"TRNAMT"] objectAtIndex:0];
             NSXMLElement *type = [[node elementsForName:@"TRNTYPE"] objectAtIndex:0];
-            [result addObject:[name objectValue]];
+            
+            t.date = [date objectValue];
+            t.amount = [[amount objectValue] floatValue];
+            t.name = [name objectValue];
+            t.type = [type objectValue];
+            
+            [result addObject:t];
         }
         
     }

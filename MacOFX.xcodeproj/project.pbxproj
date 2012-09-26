@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793112401613A06F009FB3F7 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 7931123F1613A06F009FB3F7 /* Transaction.m */; };
 		7948726F15FFF08500B43C9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7948726E15FFF08500B43C9C /* Foundation.framework */; };
 		7948727215FFF08500B43C9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7948727115FFF08500B43C9C /* main.m */; };
 		7948727615FFF08500B43C9C /* MacOFX.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7948727515FFF08500B43C9C /* MacOFX.1 */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7931123E1613A06F009FB3F7 /* Transaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		7931123F1613A06F009FB3F7 /* Transaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
 		7948726A15FFF08500B43C9C /* MacOFX */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MacOFX; sourceTree = BUILT_PRODUCTS_DIR; };
 		7948726E15FFF08500B43C9C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7948727115FFF08500B43C9C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				7948727115FFF08500B43C9C /* main.m */,
+				7931123E1613A06F009FB3F7 /* Transaction.h */,
+				7931123F1613A06F009FB3F7 /* Transaction.m */,
 				796AE14F1602586E00CB7611 /* OFXLoader.h */,
 				796AE1501602586E00CB7611 /* OFXLoader.m */,
 				7948727515FFF08500B43C9C /* MacOFX.1 */,
@@ -154,6 +159,7 @@
 				7948727215FFF08500B43C9C /* main.m in Sources */,
 				796AE14E1602541B00CB7611 /* OFXParserDOM.m in Sources */,
 				796AE1511602586E00CB7611 /* OFXLoader.m in Sources */,
+				793112401613A06F009FB3F7 /* Transaction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
